@@ -1,6 +1,6 @@
-# TicTacToe
+# Tic Tac Toe
 
-Project: Rock, paper, scissors
+Project: Tic Tac Toe
 
 from theodinproject.com
 
