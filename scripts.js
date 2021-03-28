@@ -74,15 +74,20 @@ const DisplayControler = (() => {
     const render = () => {
         // recibe el tablero y muestra los simbolos adecuados en pantalla
         let symbol;
+        let symbol_class;
         HTMLboard.forEach((element, index) => {
             if (GameBoard.board[index] === 0) {
-                symbol = '-';
+                symbol = '';
+                symbol_class = 'None'
             } else if (GameBoard.board[index] === 1) {
-                symbol = 'x';
+                symbol = 'X';
+                symbol_class = 'cross';
             } else if (GameBoard.board[index] === 2) {
-                symbol = 'o';
+                symbol = 'O';
+                symbol_class = 'circle';
             }
             element.textContent = symbol;
+            element.classList.add(symbol_class);
         });
     };
     
