@@ -6,14 +6,11 @@ const Player = (name, number) => {
 
 
 if (localStorage.getItem('player1')) {
-    console.log('memoria')
     let player1 = JSON.parse(localStorage.getItem('player1'));
     let player2 = JSON.parse(localStorage.getItem('player2'));
 } else {
-    console.log('default')
     let player1 = Player('Player1', 1);
     localStorage.setItem('player1', JSON.stringify(player1));
-    console.log(player1);
     let player2 = Player('Player2', 2);
     localStorage.setItem('player2', JSON.stringify(player2));
 }
@@ -63,9 +60,10 @@ const GameFlow = (() => {
             let pos2 = winPos[i][2];
             let win = GameBoard.board[pos0] === GameBoard.board[pos1] && GameBoard.board[pos0] === GameBoard.board[pos2] && GameBoard.board[pos0] !== 0;
             if (win) {
-                console.log('win');
+                // Here it changesActivePlayer because the endCheck if after the changeActivePlayer on play method.
+                // Otherwise there are problems with rendering to the web the result
+                GameFlow.changeActivePlayer();
                 GameFlow.winner = GameFlow.activePlayer;
-                console.log(GameFlow.winner.name);
                 DisplayControler.disableClick();
                 DisplayControler.displayResult();
             };
@@ -81,8 +79,9 @@ const GameFlow = (() => {
     const play = (index) => {
         // Modifies the board, changes the activePlayer and chek for win or tie
         GameBoard.modBoard(index);
-        GameFlow.changeActivePlayer();
+        GameFlow.changeActivePlayer()
         GameFlow.endCheck();
+        ;
     };
 
     const reset = () => {
