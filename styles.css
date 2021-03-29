@@ -46,18 +46,8 @@ h1 {
     padding-bottom: 30px;
 }
 
-.None {
+.tile {
     font-size: 100px;
-}
-
-.cross {
-    color: rgb(211, 106, 106);
-    
-}
-
-.circle {
-    color: rgb(102, 102, 226);
- 
 }
 
 .bb {
@@ -74,4 +64,24 @@ h1 {
 
 .br {
     border-right: solid 6px gray;
+}
+
+#player1-card-title {
+    color: rgb(211, 106, 106);
+}
+
+#player2-card-title {
+    color: rgb(102, 102, 226);
+}
+
+.winner {
+    background-color: rgba(63, 128, 63, 0.61) !important;
+}
+
+.looser {
+    background-color: rgba(214, 172, 55, 0.637) !important;
+}
+
+.tie {
+    background-color: rgba(145, 145, 204, 0.74) !important;
 }

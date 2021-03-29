@@ -9,8 +9,11 @@
     <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <div id="title"><h1>Tic-Tac-Toe</h1></div>
+
+    <!-- Board -->
     <div class="container" id="board">
         <div class="row">
             <div class="col br bb" id="0"></div>
@@ -28,39 +31,43 @@
             <div class="col bt bl" id="8"></div>
         </div>
     </div>
-    
-        
 
-    <h2 id="result"></h2>
+    <!-- Player Cards -->
+    <div class="container">
+            <div class="card-group">
+            <div class="card text-center bg-light mb-3" id="player1-card">
+                <div class="card-body">
+                    <h2 class="card-title" id="player1-card-title">Player 1 - X</h2>
+                    <h4 class="card-text" id="player1-card-text">&#8593;</h4>
+                </div>
+            </div>
+            <div class="card text-center bg-light mb-3" id="player2-card">
+                <div class="card-body">
+                    <h2 class="card-title" id="player2-card-title"><strong>Player 2 - O</strong></h2>
+                    <h4 class="card-text" id="player2-card-text"></h4>
+                </div>
+            </div>
+        </div> 
+    </div> 
 
-
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-        Set Players
-    </button>
-  
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+    <!-- Player Name's Form and Buttons-->
+    <div class="container">
+        <form id="players" name="players">
+            <div class="input-group mb-3">
+                <span class="input-group-text">X</span>
+                <input type="text" class="form-control" id="player1-name" placeholder="Hermione (X starts!)" name="player1-name" required>
+                <span class="input-group-text">O</span>
+                <input type="text" class="form-control" id="player2-name" placeholder="Harry" name="player2-name" required>
             </div>
-            <div class="modal-body">
-                ...
+            <div class="d-flex" role="group">    
+                <button type="button" class="btn btn-secondary btn-lg mx-auto" id="reset-game">Reset Game</button>
+                <button type="submit" class="btn btn-success btn-lg mx-auto" id="set-names">Set Names</button>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-        </div>
-        </div>
+        </form>
     </div>
 
-
+    <!-- Footer -->
+    <hr/>
     <h6 class="lead text-center">
         <a href="https://github.com/earosselot">earosselot's</a> Tic-Tac-Toe project from 
         <a href="https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/tic-tac-toe">theodinproject.com</a>
