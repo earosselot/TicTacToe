@@ -60,7 +60,7 @@ const GameFlow = (() => {
             let pos2 = winPos[i][2];
             let win = GameBoard.board[pos0] === GameBoard.board[pos1] && GameBoard.board[pos0] === GameBoard.board[pos2] && GameBoard.board[pos0] !== 0;
             if (win) {
-                // Here it changesActivePlayer because the endCheck if after the changeActivePlayer on play method.
+                // Here it changesActivePlayer because the endCheck comes after the changeActivePlayer on play method.
                 // Otherwise there are problems with rendering to the web the result
                 GameFlow.changeActivePlayer();
                 GameFlow.winner = GameFlow.activePlayer;
