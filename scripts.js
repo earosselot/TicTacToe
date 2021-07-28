@@ -1,5 +1,4 @@
 
-
 const Player = (name, number) => {
     return {name, number}
 }
@@ -71,7 +70,6 @@ const GameFlow = (() => {
 
         // Tie Check
         if (!GameBoard.board.includes(0) && !winner)  {
-            console.log('tie');
             DisplayControler.displayResult();
         }
     };
@@ -88,7 +86,7 @@ const GameFlow = (() => {
         // Reset everything. It called when Reset Game button is clicked
         GameBoard.reset();
         GameFlow.activePlayer = player1;
-        winner = null;
+        GameFlow.winner = null;
         DisplayControler.render();
         DisplayControler.clickBoard();
         DisplayControler.resetResults();
@@ -130,7 +128,8 @@ const DisplayControler = (() => {
 
     function ticTacClick(e) {
         // Gets the id of the clicked cell in the web page. Then plays and render.
-        GameFlow.play(e['path'][0]['id']);
+        let path = e.path || (e.composedPath && e.composedPath())
+        GameFlow.play(path[0]['id']);
         render();
         this.removeEventListener('click', ticTacClick);
     };
